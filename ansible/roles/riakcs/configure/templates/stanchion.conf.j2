@@ -4,11 +4,7 @@
 ## 
 ## Acceptable values:
 ##   - an IP/port pair, e.g. 127.0.0.1:10011
-{% if groups['stanchion'][0]|ipaddr %}
-listener = {{ groups['stanchion'][0] }}:{{ stanchion_port }}
-{% else %}
-listener = {{ lookup('dig', groups['stanchion'][0], wantlist=True)[0] }}:{{ stanchion_port }}
-{% endif %}
+listener = 127.0.0.1:{{ stanchion_port }}
 
 ## Default cert location for https can be overridden
 ## with the ssl config variable, for example:
@@ -30,11 +26,7 @@ listener = {{ lookup('dig', groups['stanchion'][0], wantlist=True)[0] }}:{{ stan
 ## 
 ## Acceptable values:
 ##   - an IP/port pair, e.g. 127.0.0.1:10011
-{% if riakcs_control|ipaddr %}
-riak_host = {{ riakcs_control }}:{{ riak_port }}
-{% else %}
-riak_host = {{ lookup('dig', riakcs_control, wantlist=True)[0] }}:{{ riak_port }}
-{% endif %}
+riak_host = 127.0.0.1:{{ riak_port }}
 
 ## Admin user credentials. The credentials specified here must
 ## match the admin credentials specified in the riak-cs app.config

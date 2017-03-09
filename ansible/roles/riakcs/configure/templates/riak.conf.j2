@@ -293,11 +293,7 @@ listener.http.internal = 127.0.0.1:8098
 ## 
 ## Acceptable values:
 ##   - an IP/port pair, e.g. 127.0.0.1:10011
-{% if inventory_hostname|ipaddr %}
-listener.protobuf.internal = {{ inventory_hostname }}:{{ riak_port }}
-{% else %}
-listener.protobuf.internal = {{ lookup('dig', inventory_hostname, wantlist=True)[0] }}:{{ riak_port }}
-{% endif %}
+listener.protobuf.internal = 127.0.0.1:{{ riak_port }}
 
 ## The maximum length to which the queue of pending connections
 ## may grow. If set, it must be an integer > 0. If you anticipate a

@@ -3,6 +3,11 @@
 - name: load configuration
   include_vars: "{{ site_name }}.yml"
 
+- debug: var="{{site_name}}"
+
+- debug: var="{{item.server}}"
+  with_items: nginx_sites
+
 - name: Create the site configurations
   sudo: yes
   template:

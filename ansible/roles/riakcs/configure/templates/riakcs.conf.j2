@@ -9,11 +9,7 @@
 ## 
 ## Acceptable values:
 ##   - an IP/port pair, e.g. 127.0.0.1:10011
-{% if inventory_hostname|ipaddr %}
-listener = {{ inventory_hostname }}:{{ riakcs_port }}
-{% else %}
-listener = {{ lookup('dig', inventory_hostname, wantlist=True)[0] }}:{{ riakcs_port }}
-{% endif %}
+listener = 127.0.0.1:{{ riakcs_port }}
 
 ## Riak node to which Riak CS accesses
 ## 
@@ -21,11 +17,7 @@ listener = {{ lookup('dig', inventory_hostname, wantlist=True)[0] }}:{{ riakcs_p
 ## 
 ## Acceptable values:
 ##   - an IP/port pair, e.g. 127.0.0.1:10011
-{% if inventory_hostname|ipaddr %}
-riak_host = {{ inventory_hostname }}:{{ riak_port }}
-{% else %}
-riak_host = {{ lookup('dig', inventory_hostname, wantlist=True)[0] }}:{{ riak_port }}
-{% endif %}
+riak_host = 127.0.0.1:{{ riak_port }}
 
 ## Configuration for access to request
 ## serialization service
@@ -34,11 +26,7 @@ riak_host = {{ lookup('dig', inventory_hostname, wantlist=True)[0] }}:{{ riak_po
 ## 
 ## Acceptable values:
 ##   - an IP/port pair, e.g. 127.0.0.1:10011
-{% if groups['stanchion'][0]|ipaddr %}
-stanchion_host = {{ groups['stanchion'][0] }}:{{ stanchion_port }}
-{% else %}
-stanchion_host = {{ lookup('dig', groups['stanchion'][0], wantlist=True)[0] }}:{{ stanchion_port }}
-{% endif %}
+stanchion_host = 127.0.0.1:{{ stanchion_port }}
 
 ## SSL configuration for access to request serialization
 ## service. With `on`, Riak CS connects to Stanchion with SSL.

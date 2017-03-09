@@ -78,5 +78,5 @@
 - name: Add CouchDB databases
   shell: "{{ item }}"
   with_items:
-    - curl -X PUT "{{ couchdb_base_url }}/{{ localsettings.COUCH_DATABASE_NAME }}"
-    - curl -X PUT "{{ couchdb_base_url }}/_config/admins/{{ localsettings.COUCH_USERNAME }}" -d '"{{ localsettings.COUCH_PASSWORD }}"'
+    - curl -X PUT "http://127.0.0.1:5984/{{ localsettings.COUCH_DATABASE_NAME }}"
+    - curl -X PUT "http://127.0.0.1:5984/_config/admins/{{ localsettings.COUCH_USERNAME }}" -d '"{{ localsettings.COUCH_PASSWORD }}"'

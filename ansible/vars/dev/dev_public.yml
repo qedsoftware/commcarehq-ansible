@@ -5,8 +5,6 @@ COMMTRACK_SITE_HOST: '{{ groups.proxy.0 }}'
 NO_WWW_SITE_HOST: '{{ groups.proxy.0 }}'
 J2ME_SITE_HOST: 'j2me.{{ groups.proxy.0 }}'
 
-testing: True
-
 etc_host_lines: []
 # - "169.38.74.104   commcarehq-india.cloudant.com"
 
@@ -211,6 +209,7 @@ localsettings:
   PG_DATABASE_NAME: commcarehq
   PG_DATABASE_PASSWORD: "{{ secrets.pg_user_passwords.default }}"
   PG_DATABASE_USER: commcarehq
+  PG_DATABASE_PORT: 5432
 #  PILLOWTOP_MACHINE_ID:
 #  PILLOW_RETRY_QUEUE_ENABLED:
   REDIS_DB: '0'
@@ -236,3 +235,5 @@ localsettings:
   XFORMS_PLAYER_URL: "http://{{ groups.touchforms.0 }}:4444"
   FORMPLAYER_URL: "http://{{ groups.touchforms.0 }}:8181"
 #  ENABLE_DRACONIAN_SECURITY_FEATURES: yes
+
+site_locations: []
