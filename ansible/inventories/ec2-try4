@@ -1,49 +1,49 @@
 [webworkers]
-commcare1.qed.ai
+commcare.qed.ai
 
 [postgresql]
-commcare1.qed.ai
+commcare.qed.ai
 
 [couchdb]
-commcare1.qed.ai
+commcare.qed.ai
 
 [redis]
-commcare1.qed.ai
+commcare.qed.ai
 
 [touchforms]
-commcare1.qed.ai
+commcare.qed.ai
 
 [formplayer]
-commcare1.qed.ai
+commcare.qed.ai
 
 [celery]
-commcare1.qed.ai
+commcare.qed.ai
 
 [elasticsearch]
-commcare1.qed.ai elasticsearch_node_name=es0
+commcare.qed.ai elasticsearch_node_name=es0
 
 [proxy]
-commcare1.qed.ai
+commcare.qed.ai
 
 [rabbitmq]
-commcare1.qed.ai
+commcare.qed.ai
 
 [zookeeper]
-commcare1.qed.ai
+commcare.qed.ai
 
 [kafka]
-commcare1.qed.ai kafka_broker_id=0
+commcare.qed.ai kafka_broker_id=0
 
 [pillowtop]
-commcare1.qed.ai
+commcare.qed.ai
 
 [shared_dir_host]
-commcare1.qed.ai
+commcare.qed.ai
 
 [riakcs]
-commcare1.qed.ai
+commcare.qed.ai
 
 [stanchion]
-commcare1.qed.ai
+commcare.qed.ai
 
 [pg_standby]
